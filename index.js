@@ -2,11 +2,12 @@ var postcss = require("postcss");
 var balanced = require("balanced-match");
 var Color = require("color");
 var helpers = require("postcss-message-helpers");
-var colourPalette = require('colour-palette')
+var colorPalette = require('colour-palette')
+// console.log(colorPalette('#00a854', 5))
 
 var functions = {
-  colorPalette: function(color, grade) {
-    return colourPalette(color, grade);
+  colorPalette: function(color, index) {
+    return colorPalette(color, index);
   },
   mix: function(one, two, weight) {
     weight = weight || 0.5;

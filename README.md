@@ -1,11 +1,13 @@
-[PostCSS](https://github.com/postcss/postcss) plugin to transform SASS/compass color functions to more compatible CSS.
+# postcss-plugin-color-functions
 
-Inspired, and modified from, [postcss-color-function](https://github.com/postcss/postcss-color-function).
+[PostCSS](https://github.com/postcss/postcss) plugin to implement commonly used color functions, including ant-design's colorPalette function.
+
+Inspired, and modified from, [postcss-color-function](https://github.com/postcss/postcss-color-function),[postcss-sass-color-functions](https://github.com/adam-h/postcss-sass-color-functions).
 
 ## Installation
 
-```console
-$ npm install git://github.com/adam-h/postcss-sass-color-functions.git
+```bash
+npm install postcss-plugin-color-functions
 ```
 
 ## Usage
@@ -14,7 +16,7 @@ $ npm install git://github.com/adam-h/postcss-sass-color-functions.git
 // dependencies
 var fs = require("fs")
 var postcss = require("postcss")
-var sassColorFunctions = require("postcss-sass-color-functions")
+var sassColorFunctions = require("postcss-plugin-color-functions")
 
 // css to be processed
 var css = fs.readFileSync("input.css", "utf8")
@@ -31,6 +33,7 @@ Using this `input.css`:
 ```css
 body {
   background-color: mix(#255073, #3c749e, 25%);
+  color: colorPalette(#00a854, 5);
 }
 
 ```
@@ -40,17 +43,18 @@ you will get:
 ```css
 body {
   background-color: rgb(54, 107, 147);
+  color: #3dbd7d;
 }
 ```
 
 Checkout [tests.js](tests.js) for examples.
 
+## Currently Supported functions
 
-### Currently Supported functions
-
- - `mix(one, two, weight)`
- - `rgba(color, alpha)`
- - `darken(color, amount)`
- - `lighten(color, amount)`
- - `tint(color, amount)`
- - `shade(color, amount)`
+- `colorPalette(color, index)`
+- `mix(one, two, weight)`
+- `rgba(color, alpha)`
+- `darken(color, amount)`
+- `lighten(color, amount)`
+- `tint(color, amount)`
+- `shade(color, amount)`

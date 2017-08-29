@@ -1,7 +1,7 @@
 {
-  "name": "postcss-sass-color-functions",
-  "version": "1.1.0",
-  "description": "PostCSS plugin to implement SASS color functions",
+  "name": "postcss-plugin-color-functions",
+  "version": "1.2.0",
+  "description": "PostCSS plugin to implement commonly used color functions, including ant-design's colorPalette function",
   "keywords": [
     "css",
     "postcss",
@@ -14,7 +14,7 @@
   "author": "Adam Heath",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adam-h/postcss-sass-color-functions.git"
+    "url": "https://github.com/webcoding/postcss-plugin-color-functions.git"
   },
   "files": [
     "index.js"
