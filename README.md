@@ -1,6 +1,6 @@
 # postcss-plugin-color-functions
 
-[PostCSS](https://github.com/postcss/postcss) plugin to implement commonly used color functions, including ant-design's colorPalette function.
+[PostCSS](https://github.com/postcss/postcss) plugin to implement commonly used color functions, including ant-design's colorPalette function and SASS/compass color functions.
 
 Inspired, and modified from, [postcss-color-function](https://github.com/postcss/postcss-color-function),[postcss-sass-color-functions](https://github.com/adam-h/postcss-sass-color-functions).
 
