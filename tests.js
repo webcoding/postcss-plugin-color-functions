@@ -8,6 +8,14 @@ function runPostCSS(css) {
     .process(css, {}).css
 }
 
+test("colorPalette(color, grade)", function(t) {
+  t.equal(
+    runPostCSS("body{background-color: colorPalette(#108ee9, 2); color: colorPalette(#00a854, 9);}"),
+    "body{background-color: #d2eafb; color: #00643b;}",
+    "colorPalette() works");
+  t.end()
+});
+
 test("mix(color, color)", function(t) {
   t.equal(
     runPostCSS("body{background-color: mix(rgb(255,0,0), #00FF00), mix(rgba(255,0,255, 0.5), #00FF00);}"),

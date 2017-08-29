@@ -2,8 +2,12 @@ var postcss = require("postcss");
 var balanced = require("balanced-match");
 var Color = require("color");
 var helpers = require("postcss-message-helpers");
+var colourPalette = require('colour-palette')
 
 var functions = {
+  colorPalette: function(color, grade) {
+    return colourPalette(color, grade);
+  },
   mix: function(one, two, weight) {
     weight = weight || 0.5;
     if(typeof weight == "string" && weight.indexOf("%") > 0) {
@@ -69,7 +73,7 @@ var functionsRegex = new RegExp(
 /**
  * PostCSS plugin to transform color()
  */
-module.exports = postcss.plugin("postcss-sass-color-functions", function() {
+module.exports = postcss.plugin("postcss-plugin-color-functions", function() {
   return function(style) {
     style.walkDecls(function transformDecl(decl) {
       if (!decl.value || !functionsRegex.test(decl.value)) {
